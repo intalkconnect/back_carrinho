@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const http = require('http');
 const socketIo = require('socket.io');
 const customerController = require('./controllers/customerController');
@@ -16,6 +17,8 @@ const server = http.createServer(app); // Criar servidor HTTP
 const io = socketIo(server); // Inicializa o Socket.io
 
 connectToDatabase();
+
+app.use(cors());  // Isso permite todas as origens
 
 app.use(express.json());
 
