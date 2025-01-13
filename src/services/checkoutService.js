@@ -75,6 +75,11 @@ const getCheckouts = async () => {
             throw new Error('Nenhum checkout encontrado');
         }
 
+        // Converte _id de ObjectId para string
+        checkouts.forEach((checkout) => {
+            checkout._id = checkout._id.toString();
+        });
+
         return checkouts;
     } catch (error) {
         throw error;
