@@ -10,11 +10,17 @@ const getOrcamentoById = async (req, res) => {
 
     try {
         const orcamento = await orcamentoService.getOrcamentoById(id);
+
+        if (!orcamento) {
+            return res.status(404).json({ error: 'Orçamento não encontrado' });
+        }
+
         res.json(orcamento); // Retorna o documento encontrado
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
+
 
 // Função para o endpoint POST /orcamento
 const createOrcamento = async (req, res) => {
