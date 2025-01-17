@@ -6,9 +6,9 @@ const orcamento = new mongoose.Schema({
     dataCriacao: String,
     dataFim: String,
     status: String,
-    inserido: Boolean,
+    process: Boolean,
     numero_orcamento: String,
-    dataCompra: Date,
+    dataCompra: String,
     orcamentoFinal: Object,
 });
 
