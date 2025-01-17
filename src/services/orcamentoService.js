@@ -23,7 +23,7 @@ const getOrcamentoById = async (orcamentoId) => {
 
         return orcamento;
     } catch (error) {
-        throw new Error(`Erro ao buscar orçamento: ${error.message}`);
+        return[]
     }
 };
 
@@ -51,7 +51,7 @@ const createOrcamento = async (body) => {
             dataCriacao,
             dataFim,
             status: 'pending',
-            inserido: false,
+            process: false,
             numero_orcamento: numeroOrcamento,
             orcamentoFinal: {},
         });
